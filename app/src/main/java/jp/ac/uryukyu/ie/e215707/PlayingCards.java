@@ -9,6 +9,16 @@ public class PlayingCards{
     ArrayList<ArrayList<String>> hand_cards_2P = new ArrayList<ArrayList<String>>(); 
     ArrayList<ArrayList<String>> cards = new ArrayList<ArrayList<String>>(); 
 
+    ArrayList<ArrayList<String>> getCards(){
+        return cards;
+        }
+    ArrayList<ArrayList<String>> getHand_cards_1P(){
+        return hand_cards_1P;
+        }
+    ArrayList<ArrayList<String>> getHand_cards_2P(){
+        return hand_cards_2P;
+        }
+
     void playcards(){ 
         for(int d = 0; d < 4; d++){
             for(int n = 0; n < 13; n++){
@@ -16,8 +26,8 @@ public class PlayingCards{
                 card.add(design[d]);
                 card.add(number[n]);
                 cards.add(card);
-                }
             }
+        }
 
         Collections.shuffle(cards);
 
@@ -26,7 +36,7 @@ public class PlayingCards{
             ArrayList<String> hand_card_1P = new ArrayList<>();
             for(int c=0; c<2; c++){
                 hand_card_1P.add(cards.get(i).get(c));
-                }
+            }
             hand_cards_1P.add(hand_card_1P);
             cards.remove(i);
         }
@@ -36,23 +46,12 @@ public class PlayingCards{
             ArrayList<String> hand_card_2P = new ArrayList<>();
             for(int c=0; c<2; c++){
                 hand_card_2P.add(cards.get(i).get(c));
-                }
+            }
             hand_cards_2P.add(hand_card_2P);
             cards.remove(i);
-            }
         }
-
-            ArrayList<ArrayList<String>> getCards(){
-                return cards;
-                }
-            ArrayList<ArrayList<String>> getHand_cards_1P(){
-                return hand_cards_1P;
-                }
-            ArrayList<ArrayList<String>> getHand_cards_2P(){
-                return hand_cards_2P;
-                }
-
-        }
+    }
+}
     
     
 
