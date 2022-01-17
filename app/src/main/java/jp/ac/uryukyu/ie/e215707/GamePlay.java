@@ -2,11 +2,16 @@ package jp.ac.uryukyu.ie.e215707;
 import java.util.Scanner;
 import java.util.ArrayList;
 
+/**
+ * ゲームの進行をする。
+ */
 public class GamePlay {
     String[] player = {"1P", "2P"};
     Command com = new Command();
     PlayingCards c = new PlayingCards();
-    
+/**
+ * ゲームの進行をする。
+ */
     void GamePlay(){
         com.Start_Command();
         c.playcards();

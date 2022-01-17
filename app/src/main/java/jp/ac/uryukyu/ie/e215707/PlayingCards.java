@@ -1,7 +1,12 @@
 package jp.ac.uryukyu.ie.e215707;
 import java.util.ArrayList;
 import java.util.Collections;
-
+/**
+ * ポーカーをするためのカードを用意する
+ * 山札として保存するためのリスト：cards
+ * 1Pの手札として保存するリスト：hand_cards_1P
+ * 2Pの手札として保存するリスト：hand_cards_2P
+ */
 public class PlayingCards{
     private String[] design = {"♠️", "❤️", "♣️", "♦️"}; 
     private String[] number = {"1", "2", "3", "4", "5", "6", "7", "8","9", "10", "11", "12", "13"}; 
@@ -19,6 +24,9 @@ public class PlayingCards{
         return hand_cards_2P;
         }
 
+/**
+ * 山札を生成し、プレイヤーに手札を配る
+ */
     void playcards(){ 
         for(int d = 0; d < 4; d++){
             for(int n = 0; n < 13; n++){
@@ -29,8 +37,14 @@ public class PlayingCards{
             }
         }
 
+    /**
+     * 山札をシャッフルする：Collections.shuffle(cards)
+     */
         Collections.shuffle(cards);
 
+    /**
+     * プレイヤーの手札を用意する
+     */
         for(int I = 0; I < 5; I++){
             int i = 0;
             ArrayList<String> hand_card_1P = new ArrayList<>();

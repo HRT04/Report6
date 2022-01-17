@@ -6,6 +6,14 @@ import java.util.Set;
 import java.util.HashSet;
 import java.util.Scanner;
 
+/**
+ * 役とプレイヤーの勝敗を判別する。
+ * 手札の数字が何枚揃っているかを数える:num_count
+ * 手札に絵柄が何枚揃っているかを数える:design_count
+ * プレイヤーが揃えた役の名前を保存する:role
+ * 1Pの手札の揃い具合を保存する:map_1P
+ * 2Pの手札の揃い具合を保存する:map_2P
+ */
 public class Judge {
     int num_count;
     int Design_count_1P;
@@ -19,6 +27,11 @@ public class Judge {
     Map<String, Integer> Point_Players = new HashMap<String, Integer>();
     ArrayList<Map<Integer, Integer>> Judge_Players_List = new ArrayList<Map<Integer, Integer>>();
 
+/**
+ * 手札の揃い具合をリストに保管する。
+ * @param Player1P 揃い具合を調べたい手札のリスト。
+ * @param Player2P 揃い具合を調べたい手札のリスト。
+ */
     void Judge(ArrayList<ArrayList<String>> Player1P, ArrayList<ArrayList<String>> Player2P){
         Players.add(Player1P);
         Players.add(Player2P);
@@ -63,7 +76,9 @@ public class Judge {
         }
     }        
 
-
+/**
+ * 役を判別し、その情報から勝敗も判別する。
+ */
     void Judge_Ment(){
         ArrayList<Map<Integer, Integer>> Judge_Players_List = new ArrayList<Map<Integer, Integer>>();
         Judge_Players_List.add(map_1P);
